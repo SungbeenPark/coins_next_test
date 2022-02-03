@@ -1,61 +1,11 @@
 import {Accordion, Divider, Header, Icon} from "semantic-ui-react";
 import Head from "next/Head";
-import {clusterApiUrl, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey} from "@solana/web3.js";
-import {useEffect, useState} from "react";
-import * as ed25519 from 'ed25519-hd-key';
-
-const bip39 = require('bip39')
-
-
-import splToken from '@solana/spl-token'
-
-
-// address
-// GgPQQEK9LSDjD4VdupCRuDHr2hAbSFSgdWqf2hKU7XME
-
-//
-// mnemonic
-// hobby prosper print beef portion special typical olive crazy resource tomorrow auto
-// [236,84,6,41,137,217,159,103,148,91,234,254,24,52,56,94,20,10,151,63,133,2,204,173,163,68,0,114,102,85,45,218,232,246,73,128,159,44,98,231,77,233,207,158,36,35,127,121,88,40,22,18,144,192,228,85,250,72,133,246,243,138,32,45]
+import {useState} from "react";
 
 const Home = () => {
-    const derivePath = "m/44'/501'/0'/0'";
 
     const [activeIndex, setActiveIndex] = useState(-1)
 
-
-    useEffect(() => {
-        const connection = new Connection(
-            clusterApiUrl('mainnet-beta'),
-            'confirmed',
-        );
-
-        // 한글 니모닉 wordlists
-        // console.log(bip39.wordlists.korean)
-
-        //Vhtqv2iFRNFMjuwTcNsC2VM16nTxkVJjRN4bQoVwvY9
-        //FMybrtQLcHEf6UhJqA4qkHXeK3kfCrz8AgLX55fzJvfx
-        let mnemonic = "bid cloth bleak jaguar lens situate play gospel visual sweet west suit"
-        let pw = "";
-
-        mnemonic = normalize(mnemonic)
-        bip39.mnemonicToSeed(mnemonic, pw).then((bytes) => {
-            const derivedSeed = ed25519.derivePath(derivePath, bytes.toString('hex')).key;
-            const keypair = Keypair.fromSeed(derivedSeed)
-
-            // console.log("publickKey", keypair.publicKey.toString())
-            // console.log("secretKey", keypair.secretKey)
-            connection.getAccountInfo(keypair.publicKey).then(console.log);
-        })
-
-        // const keypair_bytes = [236, 84, 6, 41, 137, 217, 159, 103, 148, 91, 234, 254, 24, 52, 56, 94, 20, 10, 151, 63, 133, 2, 204, 173, 163, 68, 0, 114, 102, 85, 45, 218, 232, 246, 73, 128, 159, 44, 98, 231, 77, 233, 207, 158, 36, 35, 127, 121, 88, 40, 22, 18, 144, 192, 228, 85, 250, 72, 133, 246, 243, 138, 32, 45];
-        // var private_key_bytes = new Uint8Array(keypair_bytes.slice(0, 32))
-        // var public_key_bytes = new Uint8Array(keypair_bytes.slice(32, keypair_bytes.length))
-        // console.log("private_key_bytes ", private_key_bytes)
-        // console.log("public_key_bytes ", public_key_bytes)
-        //
-        // console.log(Keypair.fromSeed(private_key_bytes).publicKey.toString())
-    })
 
     const handleClick = (e, titleProps) => {
         const { index } = titleProps
@@ -70,10 +20,24 @@ const Home = () => {
                 <meta name="description" content="sbt 홈피입니다."></meta>
             </Head>
             <>
-                <Header as={"h3"} style={{paddingTop: 40}}>Solana</Header>
-                <a href={"https://www.evernote.com/shard/s259/sh/9130748f-1746-5979-55e3-b9cf07365ed8/3ee8cf7a9438c19b899c889f7bc46722"} target={"_blank"}>솔라나 설치 설명 문서</a>
+                <Header as={"h3"} style={{paddingTop: 40}}>Solana(501)</Header>
                 <Divider/>
                 <Accordion fluid styled>
+                    <Accordion.Title
+                        active={activeIndex === 99}
+                        index={99}
+                        onClick={handleClick}
+                    >
+                        <Icon name='dropdown' />
+                        솔라나 정보
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === 99}>
+                        <p>
+                            <a href={"evernote:///view/34205509/s259/9130748f-1746-5979-55e3-b9cf07365ed8/aee03a5a-a3e1-4bc2-aafa-5943bab3bcbe"} target={"_blank"}>솔라나 설치 설명 문서(Evernote)</a><br/>
+                            <a href={"https://github.com/solana-labs/solana"} target={"_blank"}>솔라나 GIT</a><br/>
+                            BI44 규격 m/44'/501'/0'/0'<br/>
+                        </p>
+                    </Accordion.Content>
                     <Accordion.Title
                         active={activeIndex === 0}
                         index={0}
@@ -134,70 +98,77 @@ const Home = () => {
                         SOLANA 지갑 생성
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 3}>
+                        <h5>linux 환경에서 생성</h5>
                         <p>
-                            1. Keypair 생성<br/>
-                            2. 지갑 생성<br/>
-
                             $ mkdir ~/my-solana-wallet<br/>
                             $ cd solana/target/debug/<br/>
                             $ ./solana-keygen new --outfile ~/my-solana-wallet/my-keypair.json<br/>
                             $ ./solana-keygen pubkey ~/my-solana-wallet/my-keypair.json<br/>
-                            결과 : ErRr1caKzK8L8nn4xmEWtimYRiTCAZXjBtVphuZ5vMKy 지갑 주소 생성<br/><br/>
-
-                            web3.js 에서처리<br/>
+                            결과 : Vhtqv2iFRNFMjuwTcNsC2VM16nTxkVJjRN4bQoVwvY9 지갑 주소 생성<br/>
+                            my-keypair.json 안에 64byte 배열 생성됨 복구에 사용<br/>
+                        </p>
+                        <h5>web3.js 에서 생성</h5>
+                        <p>
                             const wallet = web3.Keypair.generate();<br/>
                         </p>
                     </Accordion.Content>
                     <Accordion.Title
                         active={activeIndex === 4}
-                        index={3}
+                        index={4}
                         onClick={handleClick}
                     >
                         <Icon name='dropdown' />
                         SOLANA지갑 설정(복구)
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 4}>
+                        <h5>key bytes 설정(복구)</h5>
                         <p>
-                            <h5>key bytes 로 복구</h5>
                             const keypair_bytes = [0,0,0,0,0...0,0]; //total length : 64<br/>
                             var private_key_bytes = new Uint8Array(keypair_bytes.slice(0, 32))<br/>
                             var public_key_bytes = new Uint8Array(keypair_bytes.slice(32, keypair_bytes.length))<br/>
                             console.log("private_key_bytes ", private_key_bytes)<br/>
                             console.log("public_key_bytes ", public_key_bytes)<br/>
                             console.log(Keypair.fromSeed(private_key_bytes).publicKey.toString())<br/><br/>
-
-                            <h5>니모닉으로 복구</h5>
+                        </p>
+                        <h5>니모닉 설정(복구)</h5>
+                        <p>
                             let mnemonic = "bid cloth bleak jaguar lens situate play gospel visual sweet west suit"<br/>
                             let pw = "";<br/>
 
-                            bip39.mnemonicToSeed(mnemonic, pw).then((bytes) =><br/>
+                            bip39.mnemonicToSeed(mnemonic, pw).then((bytes) => &#123;<br/>
                                 const derivedSeed = ed25519.derivePath(derivePath, bytes.toString('hex')).key;<br/>
                                 const keypair = Keypair.fromSeed(derivedSeed)<br/>
 
                                 console.log("publickKey", keypair.publicKey.toString())<br/>
                                 console.log("secretKey", keypair.secretKey)<br/>
-                            )
+                            &#125;)
                         </p>
                     </Accordion.Content>
+                    <Accordion.Title
+                        active={activeIndex === 5}
+                        index={5}
+                        onClick={handleClick}
+                    >
+                        <Icon name='dropdown' />
+                        트랜잭션 생성(Web3.js)
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === 5}>
+                        <p>
+                            // Create Simple Transaction<br/>
+                            let transaction = new web3.Transaction();<br/><br/>
 
+                            // Add an instruction to execute<br/>
+                            transaction.add(web3.SystemProgram.transfer(&#123;<br/>
+                            fromPubkey: payer.publicKey,<br/>
+                            toPubkey: toAccount.publicKey,<br/>
+                            lamports: 1000,<br/>
+                            &#125;));<br/>
+                        </p>
+                    </Accordion.Content>
                 </Accordion>
             </>
         </div>
     )
-}
-
-
-
-function normalize(seed) {
-    if (typeof seed !== 'string') {
-        throw new TypeError('seed string required')
-    }
-
-    seed = seed.normalize('NFKD');// Normalization Form: Compatibility Decomposition
-    seed = seed.replace(/\s+/g, ' ');// Remove multiple spaces in a row
-    seed = seed.toLowerCase();
-    seed = seed.trim();
-    return seed
 }
 
 export default Home

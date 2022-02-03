@@ -8,7 +8,7 @@ export default function Top(){
             <div style={{flex:"100px 0 0"}}>
                 <img src="/images/logo.png" alt={"logo"} style={{display:"block", width:80}}/>
             </div>
-            <Header as={"h1"}>SBT</Header>
+            <Header as={"h1"}>블록체인 테스트</Header>
         </div>
 
         <Gnb/>

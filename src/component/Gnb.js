@@ -35,17 +35,17 @@ export default function Gnb() {
                 onClick={goLink}
             />
             <Menu.Item
-                name='SOLANA'
+                name='solana'
                 active={activeItem === 'solana'}
                 onClick={goLink}
             />
             <Menu.Item
-                name='TRON'
+                name='tron'
                 active={activeItem === 'tron'}
                 onClick={goLink}
             />
             <Menu.Item
-                name='KLAYTN'
+                name='klaytn'
                 active={activeItem === 'klay'}
                 onClick={goLink}
             />
