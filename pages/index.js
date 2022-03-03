@@ -1,5 +1,4 @@
 import {Accordion, Divider, Icon} from "semantic-ui-react";
-import Head from "next/Head";
 import {useState} from "react";
 
 const Home = () => {
@@ -13,10 +12,6 @@ const Home = () => {
 
     return (
         <div>
-            <Head>
-                <title>HOME | SBT</title>
-                <meta name="description" content="sbt 홈피입니다."></meta>
-            </Head>
             <>
                 <Accordion fluid styled>
                     <Accordion.Title

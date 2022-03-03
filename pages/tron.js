@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {Accordion, Button, Divider, Form, Grid, Header, Icon, Radio} from "semantic-ui-react";
 import {useState} from "react";
 import TronWeb from "tronweb";
@@ -195,10 +194,6 @@ const Tron = () => {
     }
 
     return <div>
-        <Head>
-            <title>TRON | SBT</title>
-            <meta name="description" content="트론 테스트"></meta>
-        </Head>
         <Header as={"h3"} style={{paddingTop: 40}}>지갑 설정</Header>
         <Divider/>
             {generateAddress.hexAddress !== ""?

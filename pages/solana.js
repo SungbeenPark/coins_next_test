@@ -1,5 +1,4 @@
 import {Accordion, Button, Divider, Form, Grid, Header, Icon, Radio} from "semantic-ui-react";
-import Head from "next/Head";
 import {
     clusterApiUrl,
     Connection,
@@ -167,10 +166,6 @@ const Solana = () => {
 
     return (
         <div>
-            <Head>
-                <title>SOLANA | SBT</title>
-                <meta name="description" content="솔라나 테스트"></meta>
-            </Head>
             <Header as={"h3"} style={{paddingTop: 40}}>지갑 설정</Header>
             <Divider/>
             <Grid divided='vertically'>
