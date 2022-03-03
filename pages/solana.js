@@ -1,16 +1,17 @@
 import {Accordion, Button, Divider, Form, Grid, Header, Icon, Radio} from "semantic-ui-react";
 import Head from "next/Head";
 import {
-    LAMPORTS_PER_SOL,
-    Connection,
     clusterApiUrl,
+    Connection,
     Keypair,
+    LAMPORTS_PER_SOL,
     PublicKey,
-    Transaction,
-    sendAndConfirmTransaction, SystemProgram
+    sendAndConfirmTransaction,
+    SystemProgram,
+    Transaction
 } from '@solana/web3.js'
 
-import {AccountLayout, ASSOCIATED_TOKEN_PROGRAM_ID, Token, TOKEN_PROGRAM_ID} from '@solana/spl-token'
+import {Token, TOKEN_PROGRAM_ID} from '@solana/spl-token'
 
 import {useEffect, useState} from "react";
 import * as ed25519 from 'ed25519-hd-key';

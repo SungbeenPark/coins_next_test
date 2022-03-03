@@ -1,15 +1,6 @@
-import {Accordion, Divider, Header, Icon} from "semantic-ui-react";
+import {Accordion, Divider, Icon} from "semantic-ui-react";
 import Head from "next/Head";
 import {useState} from "react";
-import {
-    Keypair,
-    LAMPORTS_PER_SOL,
-    PublicKey,
-    sendAndConfirmTransaction,
-    SystemProgram,
-    Transaction
-} from "@solana/web3.js";
-import {Token, TOKEN_PROGRAM_ID} from "@solana/spl-token";
 
 const Home = () => {
 
