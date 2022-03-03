@@ -157,11 +157,11 @@ const TronTag = () =>{
                     <div><span style={{fontWeight : "bold"}}>노드</span></div>
                     <ul>
                         <li>
-                            <div>메인넷 : https://api.trongrid.io<a href={"https://tronscan.org/#/"} target={"_blank"}>https://tronscan.org/#/</a></div>
+                            <div>메인넷 : https://api.trongrid.io<a href={"https://tronscan.org/#/"} rel="noreferrer"  target={"_blank"}>https://tronscan.org/#/</a></div>
                         </li>
                         <li>
                             <div>테스트넷(여러가지 있지만 그중 shasta) : https://api.shasta.trongrid.io/
-                                <a href={"https://shasta.tronscan.org/#/"} target={"_blank"}>https://shasta.tronscan.org/#/</a>
+                                <a href={"https://shasta.tronscan.org/#/"} rel="noreferrer"  target={"_blank"}>https://shasta.tronscan.org/#/</a>
                             </div>
                         </li>
                     </ul>
@@ -213,7 +213,7 @@ const TronTag = () =>{
                         minutes).
                     </div>
                     <div >Each address can only be obtained once a day.</div>
-                    <div >If you need TRX for the nile testnet, please add "NILE" in your
+                    <div >If you need TRX for the nile testnet, please add &#34;NILE&#34; in your
                         tweet.
                     </div>
                     <ul>
@@ -226,7 +226,7 @@ const TronTag = () =>{
                     <div><br/></div>
                     <div><br/></div>
                     <div><span style={{fontWeight : "bold"}}>ERC-20 Token Interface 작성(sol)</span></div>
-                    <div><a target={"_blank"} href={"/token.sol"} type={"download"}>token.sol</a></div>
+                    <div><a target={"_blank"} rel="noreferrer"  href={"/token.sol"} type={"download"}>token.sol</a></div>
                     <div><br/></div>
                     <ul>
                         <li>
@@ -327,7 +327,7 @@ const TronTag = () =>{
                         </li>
                     </ul>
                     <div><br/></div>
-                    <div>결과 <a href={"https://shasta.tronscan.org/#/contract/TTUzyAFPwjuJBMDXRuRJ8yWCFiKmKrTzZq"} target={"_blank"}>https://shasta.tronscan.org/#/contract/TTUzyAFPwjuJBMDXRuRJ8yWCFiKmKrTzZq</a></div>
+                    <div>결과 <a href={"https://shasta.tronscan.org/#/contract/TTUzyAFPwjuJBMDXRuRJ8yWCFiKmKrTzZq"} rel="noreferrer"  target={"_blank"}>https://shasta.tronscan.org/#/contract/TTUzyAFPwjuJBMDXRuRJ8yWCFiKmKrTzZq</a></div>
                 </div>
             </Accordion.Content>
             <Accordion.Title
@@ -339,7 +339,7 @@ const TronTag = () =>{
                 트론 토큰 발행후 이전
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 4}>
-                <a href={"https://www.evernote.com/shard/s259/sh/197c43d4-eaec-e07f-2682-58a42c88b691/2b3e6fcb1824d8f43d0af2ad484d1fb6"} target={"_blank"}>박성빈 노트 보기</a>
+                <a href={"https://www.evernote.com/shard/s259/sh/197c43d4-eaec-e07f-2682-58a42c88b691/2b3e6fcb1824d8f43d0af2ad484d1fb6"} rel="noreferrer" target={"_blank"}>박성빈 노트 보기</a>
             </Accordion.Content>
         </Accordion>
     </>
