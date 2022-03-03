@@ -133,7 +133,6 @@ const Solana = () => {
                     lamports: LAMPORTS_PER_SOL * sendAmount,
                 }),
             );
-            console.log("transaction",transaction)
 
         } else {//sendToken
             const mint = new PublicKey('2BsZeLpEusAd7i6qkmCmiHUpocMTRghoBHzMb4suMnoi')
@@ -153,8 +152,6 @@ const Solana = () => {
                     sendAmount * LAMPORTS_PER_SOL,
                 ),
             );
-            console.log("transaction",transaction)
-
 
         }
         // Sign transaction, broadcast, and confirm
