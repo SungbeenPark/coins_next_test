@@ -1,5 +1,5 @@
 {
-  "name": "solana_next_test",
+  "name": "coins_next_test",
   "private": true,
   "scripts": {
     "dev": "next dev",
