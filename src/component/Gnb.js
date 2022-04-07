@@ -11,8 +11,8 @@ export default function Gnb() {
         activeItem = "solana"
     } else if (router.pathname === "/tron"){
         activeItem = "tron"
-    } else if (router.pathname === "/klay"){
-        activeItem = "send_spl"
+    } else if (router.pathname === "/klaytn"){
+        activeItem = "klaytn"
     }
 
     const goLink = (e,data)=>{
@@ -22,8 +22,8 @@ export default function Gnb() {
             router.push("/solana","/solana")
         } else if(data.name === 'tron'){
             router.push("/tron","/tron")
-        } else if(data.name === 'klay'){
-            router.push("/klay","/klay")
+        } else if(data.name === 'klaytn'){
+            router.push("/klaytn","/klaytn")
         }
     }
 
@@ -46,7 +46,7 @@ export default function Gnb() {
             />
             <Menu.Item
                 name='klaytn'
-                active={activeItem === 'klay'}
+                active={activeItem === 'klaytn'}
                 onClick={goLink}
             />
         </Menu>
