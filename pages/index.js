@@ -45,7 +45,7 @@ const Home = () => {
                         Klaytn(8217)
                     </Accordion.Title>
                     <Accordion.Content active={tabIndex === 2}>
-                        <a href={"https://www.evernote.com/shard/s259/sh/ebbb29c4-23e0-ec72-e22e-ad57511a8369/371121c485cd5b5bde235ac811a25ecb"} rel="noreferrer" target={"_blank"}>Domex 운영 계획</a>
+                        <a href={"https://www.evernote.com/shard/s259/sh/ebbb29c4-23e0-ec72-e22e-ad57511a8369/371121c485cd5b5bde235ac811a25ecb"} rel="noreferrer" target={"_blank"}>Domex 운영 계획</a><br/>
                         <a href={"https://www.evernote.com/shard/s259/sh/fde096f4-99ab-1952-9e24-6602290610f3/47e7f7a906e38bb01956942716989e1f"} rel="noreferrer" target={"_blank"}>Domex 코인 발행 체크리스트</a>
                     </Accordion.Content>
                 </Accordion>
