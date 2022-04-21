@@ -9,6 +9,7 @@ export default function Footer(){
             }}
         >
             Copyright © SBP. All rights reserved.
+            been778@gmail.com
         </div>
     )
 }
